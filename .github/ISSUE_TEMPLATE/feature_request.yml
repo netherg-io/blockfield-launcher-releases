@@ -1,0 +1,40 @@
+name: 💡 Предложение
+description: Идея для лаунчера — новая функция, настройка или улучшение интерфейса
+title: "[Предложение]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую проблему решает
+      description: Что сейчас неудобно или чего не хватает
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Предложение
+      description: Как это должно работать
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Альтернативы
+      description: Другие варианты, которые вы рассматривали
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Дополнительно
+      description: Скриншоты, макеты, примеры из других лаунчеров
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Проверка
+      options:
+        - label: Я поискал(а) похожие [issues](https://github.com/netherg-io/blockfield-launcher-releases/issues?q=is%3Aissue) и не нашёл(ла) дубликат
+          required: true
