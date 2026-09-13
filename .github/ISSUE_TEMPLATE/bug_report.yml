@@ -1,0 +1,96 @@
+name: 🐞 Баг лаунчера
+description: Ошибка установки, запуска, обновления или работы Blockfield Launcher
+title: "[Баг]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо, что сообщаете о проблеме! Если лаунчер работает, а игра вылетает уже после запуска — это баг клиента, его лучше завести в [blockfield-releases](https://github.com/netherg-io/blockfield-releases/issues/new/choose).
+
+  - type: input
+    id: version
+    attributes:
+      label: Версия лаунчера
+      description: Указана в настройках лаунчера или в теге релиза на странице [Releases](https://github.com/netherg-io/blockfield-launcher-releases/releases)
+      placeholder: "например, 0.7.1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: Пакет установки
+      options:
+        - Windows — установщик .exe
+        - Windows — .msi
+        - Linux — .AppImage
+        - Linux — .deb
+        - Linux — .rpm
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Операционная система
+      placeholder: "Windows 11 23H2 / Fedora 44 / Ubuntu 24.04"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: stage
+    attributes:
+      label: На каком этапе проблема
+      options:
+        - Установка или первый запуск лаунчера
+        - Автообновление лаунчера
+        - Загрузка Java или файлов сборки
+        - Проверка файлов
+        - Запуск игры
+        - Интерфейс или настройки
+        - Другое
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Что произошло
+      description: Коротко опишите проблему и текст ошибки, если он был
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Шаги воспроизведения
+      placeholder: |
+        1. Открыть лаунчер
+        2. Нажать «Играть»
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Логи
+      description: Содержимое файлов из директории `logs/` лаунчера. Большие файлы прикрепите через поле ниже.
+      render: shell
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Скриншоты, видео, файлы
+      description: Перетащите файлы в это поле
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Проверка
+      options:
+        - label: Я поискал(а) похожие [issues](https://github.com/netherg-io/blockfield-launcher-releases/issues?q=is%3Aissue) и не нашёл(ла) дубликат
+          required: true
+        - label: Проблема воспроизводится на последней версии лаунчера
+          required: false
